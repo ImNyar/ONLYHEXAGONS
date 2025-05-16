@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://b116fsejid2pt"]
+
+[ext_resource type="PackedScene" uid="uid://dp5sx6fjvj02m" path="res://Scenes/Player.tscn" id="1_41vm8"]
+
+[sub_resource type="Environment" id="Environment_14ig2"]
+
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_yn88e"]
+
+[node name="Game" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+use_collision = true
+size = Vector3(200, 0.01, 200)
+
+[node name="Player2" parent="." instance=ExtResource("1_41vm8")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.233826, 86.7442, -0.123787)
+light_color = Color(0.900151, 0.522819, 0.118978, 1)
+light_energy = 10.0
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.333, 0.01, 11.459)
+use_collision = true
+size = Vector3(135.665, 0.5, 23.917)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_14ig2")
+camera_attributes = SubResource("CameraAttributesPhysical_yn88e")

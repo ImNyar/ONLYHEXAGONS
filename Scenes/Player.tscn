@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://dp5sx6fjvj02m"]
+
+[ext_resource type="Script" path="res://Scripts/CharacterBody3D.gd" id="1_jaomw"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yiv7x"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_43uo6"]
+
+[sub_resource type="Environment" id="Environment_qfgng"]
+
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_vprtl"]
+
+[node name="Player" type="Node3D"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -2.39372, 3.15469, -3.41729)
+script = ExtResource("1_jaomw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_yiv7x")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D/CollisionShape3D"]
+mesh = SubResource("CapsuleMesh_43uo6")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
+transform = Transform3D(0.666667, 0, 0, 0, 0.643951, 0.172546, 0, -0.172546, 0.643951, 0, 2, 5)
+environment = SubResource("Environment_qfgng")
+attributes = SubResource("CameraAttributesPhysical_vprtl")
