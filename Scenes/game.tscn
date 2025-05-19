@@ -16,8 +16,8 @@ size = Vector3(200, 0.01, 200)
 [node name="Player2" parent="." instance=ExtResource("1_41vm8")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.233826, 86.7442, -0.123787)
-light_color = Color(0.900151, 0.522819, 0.118978, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+light_color = Color(0.247059, 0, 1, 1)
 light_energy = 10.0
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
