@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b116fsejid2pt"]
+[gd_scene load_steps=5 format=3 uid="uid://b116fsejid2pt"]
 
 [ext_resource type="PackedScene" uid="uid://dp5sx6fjvj02m" path="res://Scenes/Player.tscn" id="1_41vm8"]
+[ext_resource type="PackedScene" uid="uid://ci7hbyybstd0p" path="res://Scenes/static_hex.tscn" id="2_gc08p"]
 
 [sub_resource type="Environment" id="Environment_14ig2"]
 
@@ -27,3 +28,30 @@ size = Vector3(135.665, 0.5, 23.917)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_14ig2")
 camera_attributes = SubResource("CameraAttributesPhysical_yn88e")
+
+[node name="StaticHex" parent="." instance=ExtResource("2_gc08p")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0.373503, 0, -11.4562)
+
+[node name="StaticHex2" parent="." instance=ExtResource("2_gc08p")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0.373503, 1.99471, -16.5219)
+
+[node name="StaticHex3" parent="." instance=ExtResource("2_gc08p")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0.373503, 3.8533, -26.1904)
+
+[node name="StaticHex4" parent="." instance=ExtResource("2_gc08p")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 11.2465, 2.98111, -11.4562)
+
+[node name="StaticHex5" parent="." instance=ExtResource("2_gc08p")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 17.7171, 14.0556, -16.9259)
+
+[node name="StaticHex6" parent="." instance=ExtResource("2_gc08p")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 23.3055, 0, -11.5783)
+
+[node name="StaticHex7" parent="." instance=ExtResource("2_gc08p")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0.373503, 0, -11.4562)
+
+[node name="StaticHex8" parent="." instance=ExtResource("2_gc08p")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -9.10399, 5.57868, -11.4562)
+
+[node name="StaticHex9" parent="." instance=ExtResource("2_gc08p")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 5.45064, 8.17801, -2.97646)

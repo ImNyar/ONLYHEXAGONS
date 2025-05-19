@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci7hbyybstd0p"]
+
+[ext_resource type="PackedScene" uid="uid://dpr78s3u81ah" path="res://Models/unit_hex.glb" id="1_2ud3w"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qvwdd"]
+points = PackedVector3Array(0.577, 0, 0, 0.577, 0.25, 0, -0.577, 0, 0, -0.577, 0.25, 0, 0.289, 0, 0.5, 0.289, 0.25, 0.5, -0.289, 0, 0.5, -0.289, 0.25, 0.5, -0.289, 0, -0.5, -0.289, 0.25, -0.5, 0.289, 0, -0.5, 0.289, 0.25, -0.5)
+
+[node name="StaticHex" type="StaticBody3D"]
+
+[node name="unit_hex" parent="." instance=ExtResource("1_2ud3w")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000357509, -0.00202906, 0.000956059)
+shape = SubResource("ConvexPolygonShape3D_qvwdd")
