@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bgrjpu5jj12iu"]
+[gd_scene load_steps=3 format=3 uid="uid://bgrjpu5jj12iu"]
 
 [ext_resource type="Script" path="res://Scripts/HexGrid.gd" id="1_x8k3w"]
+[ext_resource type="PackedScene" uid="uid://ci7hbyybstd0p" path="res://Scenes/UnitHex.tscn" id="2_l83jm"]
 
 [node name="HexGrid" type="Node3D"]
 
@@ -8,4 +9,16 @@
 script = ExtResource("1_x8k3w")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.168094, 0.985771, 0, -0.985771, -0.168094, 0.0395175, 11.3934, -0.281611)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5.155, 4.13, 8.05)
+fov = 74.0
+
+[node name="StaticHex" parent="." instance=ExtResource("2_l83jm")]
+visible = false
+
+[node name="StaticHex2" parent="." instance=ExtResource("2_l83jm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 1)
+visible = false
+
+[node name="StaticHex3" parent="." instance=ExtResource("2_l83jm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.866, 0, 0.5)
+visible = false
