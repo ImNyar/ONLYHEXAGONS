@@ -4,12 +4,14 @@ const HEXA_UNIT := preload("res://Scenes/UnitHex.tscn")
 const HEXA_SCALE : = 5
 const GRID_SIZE := 13
 const NUM_LEVELS := 8
+const LEVEL_HEIGHT := 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_create_grid()
+	for z in range(NUM_LEVELS):
+		_create_grid(z)
 
-func _create_grid():
+func _create_grid(z):
 	#var tile = HEXA_UNIT.instantiate()
 	#add_child(tile)
 	#tile.scale = Vector3(1,1,1)
@@ -32,7 +34,8 @@ func _create_grid():
 		for y in range(GRID_SIZE): # rows
 			var tile = HEXA_UNIT.instantiate() # create and add tile
 			add_child(tile)
-			tile.translate(Vector3(x_cord, 0, y_cord)) # translate the tile
+			tile.scale = Vector3(HEXA_SCALE,1,HEXA_SCALE)
+			tile.translate(Vector3(x_cord, z*LEVEL_HEIGHT, y_cord)) # translate the tile
 			tile.translate(Vector3(cos(PI/6) / 50, 0, 0.5 / 50)) # create a gap
 			y_cord += 1 * 1.03 # this helps shift the next hexagon down
 			
