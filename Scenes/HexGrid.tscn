@@ -9,8 +9,9 @@
 script = ExtResource("1_x8k3w")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 17.62, 182.52, 29.795)
-fov = 137.9
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 17.62, 33.34, 29.795)
+visible = false
+fov = 156.2
 
 [node name="StaticHex" parent="." instance=ExtResource("2_l83jm")]
 visible = false

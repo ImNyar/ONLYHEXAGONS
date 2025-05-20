@@ -34,7 +34,7 @@ func _create_grid(z):
 		for y in range(GRID_SIZE): # rows
 			var tile = HEXA_UNIT.instantiate() # create and add tile
 			add_child(tile)
-			tile.scale = Vector3(HEXA_SCALE,1,HEXA_SCALE)
+			tile.scale = Vector3(HEXA_SCALE,2,HEXA_SCALE)
 			tile.translate(Vector3(x_cord, z*LEVEL_HEIGHT, y_cord)) # translate the tile
 			tile.translate(Vector3(cos(PI/6) / 50, 0, 0.5 / 50)) # create a gap
 			y_cord += 1 * 1.03 # this helps shift the next hexagon down
