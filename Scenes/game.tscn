@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b116fsejid2pt"]
 
 [ext_resource type="PackedScene" uid="uid://dp5sx6fjvj02m" path="res://Scenes/Player.tscn" id="1_41vm8"]
-[ext_resource type="PackedScene" uid="uid://ci7hbyybstd0p" path="res://Scenes/static_hex.tscn" id="2_gc08p"]
+[ext_resource type="PackedScene" uid="uid://ci7hbyybstd0p" path="res://Scenes/UnitHex.tscn" id="2_gc08p"]
 
 [sub_resource type="Environment" id="Environment_14ig2"]
 
@@ -16,7 +16,6 @@ size = Vector3(200, 0.01, 200)
 [node name="Player2" parent="." instance=ExtResource("1_41vm8")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 light_color = Color(0.247059, 0, 1, 1)
 light_energy = 10.0
 
