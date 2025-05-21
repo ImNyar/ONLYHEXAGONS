@@ -30,3 +30,7 @@ mesh = SubResource("CapsuleMesh_43uo6")
 transform = Transform3D(0.666667, 0, 0, 0, 0.643951, 0.172546, 0, -0.172546, 0.643951, 0, 2, 5)
 environment = SubResource("Environment_qfgng")
 attributes = SubResource("CameraAttributesPhysical_vprtl")
+
+[node name="RayCast" type="RayCast3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.976, 0)
+target_position = Vector3(0, -0.155, 0)

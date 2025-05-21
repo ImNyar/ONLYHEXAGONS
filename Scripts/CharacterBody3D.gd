@@ -27,5 +27,15 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
+		
+		
+
+	# ray cast
+	if $RayCast.is_colliding():
+		print("Ground")
+	else:
+		print("air")
 
 	move_and_slide()
+	
+

@@ -1,13 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://ci7hbyybstd0p"]
+[gd_scene load_steps=4 format=3 uid="uid://ci7hbyybstd0p"]
 
 [ext_resource type="PackedScene" uid="uid://dpr78s3u81ah" path="res://Models/unit_hex.glb" id="1_2ud3w"]
+[ext_resource type="Script" path="res://Scripts/TouchHex.gd" id="1_y24l8"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qvwdd"]
 points = PackedVector3Array(0.577, 0, 0, 0.577, 0.25, 0, -0.577, 0, 0, -0.577, 0.25, 0, 0.289, 0, 0.5, 0.289, 0.25, 0.5, -0.289, 0, 0.5, -0.289, 0.25, 0.5, -0.289, 0, -0.5, -0.289, 0.25, -0.5, 0.289, 0, -0.5, 0.289, 0.25, -0.5)
 
-[node name="StaticHex" type="StaticBody3D"]
+[node name="Hexagon" type="StaticBody3D"]
+disable_mode = 1
+script = ExtResource("1_y24l8")
 
 [node name="unit_hex" parent="." instance=ExtResource("1_2ud3w")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_qvwdd")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
