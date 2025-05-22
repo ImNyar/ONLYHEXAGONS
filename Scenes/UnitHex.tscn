@@ -14,5 +14,3 @@ script = ExtResource("1_y24l8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_qvwdd")
-
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

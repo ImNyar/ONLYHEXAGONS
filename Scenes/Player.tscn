@@ -18,6 +18,8 @@ glow_normalized = true
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -2.39372, 3.15469, -3.41729)
+collision_layer = 7
+collision_mask = 7
 script = ExtResource("1_jaomw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
@@ -31,6 +33,14 @@ transform = Transform3D(0.666667, 0, 0, 0, 0.643951, 0.172546, 0, -0.172546, 0.6
 environment = SubResource("Environment_qfgng")
 attributes = SubResource("CameraAttributesPhysical_vprtl")
 
-[node name="RayCast" type="RayCast3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.976, 0)
+[node name="RayCast1" type="RayCast3D" parent="CharacterBody3D"]
+transform = Transform3D(0.0465119, 1.91684, 3.51049, -3.99882, 0.097031, 1.54462e-08, -0.0851566, -3.50946, 1.9174, 0.183843, -0.996443, -0.170058)
 target_position = Vector3(0, -0.155, 0)
+collision_mask = 3
+
+[node name="RayCast2" type="RayCast3D" parent="CharacterBody3D"]
+transform = Transform3D(-0.0861643, -3.55099, 1.83931, -3.99882, 0.0970309, 2.68655e-08, -0.0446175, -1.83877, -3.55203, -0.240623, -0.996443, -0.0561066)
+target_position = Vector3(0, -0.155, 0)
+collision_mask = 3
+
+[node name="Timer" type="Timer" parent="."]

@@ -7,7 +7,6 @@ const JUMP_VELOCITY = 20
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -30,12 +29,29 @@ func _physics_process(delta):
 		
 		
 
-	# ray cast
-	if $RayCast.is_colliding():
-		print("Ground")
-	else:
-		print("air")
+	## ray cast
+	_check_collision()
 
 	move_and_slide()
+
+func _check_collision():
+	## ray cast
+	if $RayCast1.is_colliding() or $RayCast2.is_colliding():
+		#var timer = Timer.new()
+		#timer.wait_time = 0.5
+		#add_child(timer)
+		#$timer.start()
+		
+		var shape1 = $RayCast1.get_collider()
+		var shape2 = $RayCast2.get_collider()
+		if shape1 != null:
+			shape1.queue_free()
+		if shape2 != null:
+			shape2.queue_free()
+		print("ground")
+	else:
+		print("air")
+		
 	
+
 
