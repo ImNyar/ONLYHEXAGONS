@@ -1,8 +1,12 @@
 extends CharacterBody3D
 
 
-const SPEED = 20.0
-const JUMP_VELOCITY = 20
+#const SPEED = 20.0
+#const JUMP_VELOCITY = 20.0
+# testing speeds
+const SPEED = 8.0
+const JUMP_VELOCITY = 5.0
+var num = 0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -37,21 +41,19 @@ func _physics_process(delta):
 func _check_collision():
 	## ray cast
 	if $RayCast1.is_colliding() or $RayCast2.is_colliding():
-		#var timer = Timer.new()
-		#timer.wait_time = 0.5
-		#add_child(timer)
-		#$timer.start()
-		
 		var shape1 = $RayCast1.get_collider()
 		var shape2 = $RayCast2.get_collider()
 		if shape1 != null:
-			shape1.queue_free()
-		if shape2 != null:
-			shape2.queue_free()
-		print("ground")
-	else:
-		print("air")
-		
+			if shape1.timer_started == false:
+				shape1.collision_timer_start()
+				num += 1
+				print(num)
+		elif shape2 != null:
+			if shape2.timer_started == false:
+				shape2.collision_timer_start()
+				num += 1
+				print(num)
+
 	
 
 

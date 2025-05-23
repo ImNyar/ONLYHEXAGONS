@@ -17,7 +17,7 @@ glow_normalized = true
 [node name="Player" type="Node3D"]
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -2.39372, 3.15469, -3.41729)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 2, 0)
 collision_layer = 7
 collision_mask = 7
 script = ExtResource("1_jaomw")
@@ -39,8 +39,6 @@ target_position = Vector3(0, -0.155, 0)
 collision_mask = 3
 
 [node name="RayCast2" type="RayCast3D" parent="CharacterBody3D"]
-transform = Transform3D(-0.0861643, -3.55099, 1.83931, -3.99882, 0.0970309, 2.68655e-08, -0.0446175, -1.83877, -3.55203, -0.240623, -0.996443, -0.0561066)
+transform = Transform3D(-0.0861642, -3.55099, 1.83931, -3.99882, 0.097031, -1.20849e-08, -0.0446175, -1.83877, -3.55203, -0.240623, -0.996443, -0.0561066)
 target_position = Vector3(0, -0.155, 0)
 collision_mask = 3
-
-[node name="Timer" type="Timer" parent="."]

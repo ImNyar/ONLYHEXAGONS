@@ -14,3 +14,9 @@ script = ExtResource("1_y24l8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_qvwdd")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.875
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
