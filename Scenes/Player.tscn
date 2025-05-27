@@ -16,29 +16,34 @@ glow_normalized = true
 
 [node name="Player" type="Node3D"]
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+[node name="CharacterBody" type="CharacterBody3D" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 2, 0)
 collision_layer = 7
 collision_mask = 7
 script = ExtResource("1_jaomw")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody"]
 shape = SubResource("CapsuleShape3D_yiv7x")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D/CollisionShape3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody/CollisionShape3D"]
 mesh = SubResource("CapsuleMesh_43uo6")
 
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
+[node name="camera" type="Camera3D" parent="CharacterBody"]
 transform = Transform3D(0.666667, 0, 0, 0, 0.643951, 0.172546, 0, -0.172546, 0.643951, 0, 2, 5)
 environment = SubResource("Environment_qfgng")
 attributes = SubResource("CameraAttributesPhysical_vprtl")
 
-[node name="RayCast1" type="RayCast3D" parent="CharacterBody3D"]
-transform = Transform3D(0.0465119, 1.91684, 3.51049, -3.99882, 0.097031, 1.54462e-08, -0.0851566, -3.50946, 1.9174, 0.183843, -0.996443, -0.170058)
+[node name="RayCast1" type="RayCast3D" parent="CharacterBody"]
+transform = Transform3D(0.13845, 4.24877, 7.05872, -7.99761, 0.146593, -8.40366e-09, -0.137968, -4.23396, 7.0834, 0.408195, -1.045, -0.397182)
 target_position = Vector3(0, -0.155, 0)
 collision_mask = 3
 
-[node name="RayCast2" type="RayCast3D" parent="CharacterBody3D"]
-transform = Transform3D(-0.0861642, -3.55099, 1.83931, -3.99882, 0.097031, -1.20849e-08, -0.0446175, -1.83877, -3.55203, -0.240623, -0.996443, -0.0561066)
+[node name="RayCast2" type="RayCast3D" parent="CharacterBody"]
+transform = Transform3D(-0.172329, -5.32648, 4.59828, -7.99765, 0.145546, 1.15558e-07, -0.0892351, -2.75815, -8.88008, -0.51932, -1.05, -0.260524)
+target_position = Vector3(0, -0.155, 0)
+collision_mask = 3
+
+[node name="RayCast3" type="RayCast3D" parent="CharacterBody"]
+transform = Transform3D(0.0309132, 0.948665, -9.87414, -7.99761, 0.146593, 5.34744e-09, 0.192998, 5.92271, 1.58158, 0.0491178, -1.05, 0.533139)
 target_position = Vector3(0, -0.155, 0)
 collision_mask = 3

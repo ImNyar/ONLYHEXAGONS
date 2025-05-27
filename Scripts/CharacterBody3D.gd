@@ -38,21 +38,37 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-func _check_collision():
-	## ray cast
-	if $RayCast1.is_colliding() or $RayCast2.is_colliding():
+func _check_collision():		
+	if $RayCast1.is_colliding() or $RayCast2.is_colliding() or $RayCast3.is_colliding():
 		var shape1 = $RayCast1.get_collider()
 		var shape2 = $RayCast2.get_collider()
+		var shape3 = $RayCast3.get_collider()
 		if shape1 != null:
 			if shape1.timer_started == false:
 				shape1.collision_timer_start()
 				num += 1
 				print(num)
-		elif shape2 != null:
+		if shape2 != null:
 			if shape2.timer_started == false:
 				shape2.collision_timer_start()
 				num += 1
 				print(num)
+		if shape3 != null:
+			if shape3.timer_started == false:
+				shape3.collision_timer_start()
+				num += 1
+				print(num)
+				
+				
+# Template code for moving camera
+func _ready():
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+func _unhandled_input(event):
+	if event is InputEventMouseMotion and Input.mouse_mode==Input.MOUSE_MODE_CAPTURED: #if mouse is moved, rotate
+		rotate_y(-event.relative.x * .003)
+		$camera.rotate_x(-event.relative.y * .003)
+		$camera.rotation.x = clamp($camera.rotation.x, -PI/2, PI/2)
+		
 
 	
 

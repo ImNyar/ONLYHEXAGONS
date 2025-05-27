@@ -19,11 +19,6 @@ size = Vector3(200, 0.01, 200)
 [node name="Player2" parent="." instance=ExtResource("1_41vm8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.89, 82.3102, 24.4331)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Player2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.57, 6.03, 5)
-light_color = Color(0.659579, 0.406487, 1, 1)
-light_energy = 3.0
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_14ig2")
 camera_attributes = SubResource("CameraAttributesPhysical_yn88e")
@@ -56,3 +51,6 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -9.10399, 5.57868, -11.4562)
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 5.45064, 8.17801, -2.97646)
 
 [node name="HexGrid" parent="." instance=ExtResource("3_086ju")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, 4.37114e-08, 1.91069e-15, 1, 1, 4.37114e-08, -4.37114e-08, 0, 10, 0)
