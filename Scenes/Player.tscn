@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dp5sx6fjvj02m"]
+[gd_scene load_steps=7 format=3 uid="uid://dp5sx6fjvj02m"]
 
 [ext_resource type="Script" path="res://Scripts/CharacterBody3D.gd" id="1_jaomw"]
+[ext_resource type="PackedScene" uid="uid://cvi5h3heb6wl" path="res://Models/chiikawa.glb" id="2_hiaos"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yiv7x"]
+radius = 0.13
+height = 0.539
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_43uo6"]
 
@@ -16,34 +19,38 @@ glow_normalized = true
 
 [node name="Player" type="Node3D"]
 
-[node name="CharacterBody" type="CharacterBody3D" parent="."]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 2, 0)
-collision_layer = 7
-collision_mask = 7
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_hiaos")]
+transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0, 2.5, 0)
+collision_layer = 5
+collision_mask = 5
 script = ExtResource("1_jaomw")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody"]
+[node name="Leg1" type="CollisionShape3D" parent="Sketchfab_Scene"]
+transform = Transform3D(9.76672, 0, -2.14735, 0, 10, 0, 2.14735, 0, 9.76672, -4.661, -15.5, 4.221)
 shape = SubResource("CapsuleShape3D_yiv7x")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody/CollisionShape3D"]
-mesh = SubResource("CapsuleMesh_43uo6")
+[node name="Leg2" type="CollisionShape3D" parent="Sketchfab_Scene"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 3.353, -15.505, -3.762)
+shape = SubResource("CapsuleShape3D_yiv7x")
 
-[node name="camera" type="Camera3D" parent="CharacterBody"]
-transform = Transform3D(0.666667, 0, 0, 0, 0.643951, 0.172546, 0, -0.172546, 0.643951, 0, 2, 5)
+[node name="RayCast1" type="RayCast3D" parent="Sketchfab_Scene"]
+transform = Transform3D(200, 0, 0, 0, 75, 0, 0, 0, 200, -4.708, -12, 4.12)
+visible = false
+target_position = Vector3(0, -0.1, 0)
+collision_mask = 3
+
+[node name="RayCast2" type="RayCast3D" parent="Sketchfab_Scene"]
+transform = Transform3D(200, 0, 0, 0, 75, 0, 0, 0, 200, 3.515, -12, -3.815)
+visible = false
+target_position = Vector3(0, -0.1, 0)
+collision_mask = 3
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sketchfab_Scene"]
+transform = Transform3D(12.5, 0, 0, 0, 12.5, 0, 0, 0, 12.5, 0, -4.16667, 0)
+mesh = SubResource("CapsuleMesh_43uo6")
+skeleton = NodePath("../Leg1")
+
+[node name="camera" type="Camera3D" parent="Sketchfab_Scene"]
+transform = Transform3D(-8.33333, 1.88556e-07, -7.03699e-07, 0, 8.04938, 2.15683, 7.28523e-07, 2.15683, -8.04938, 0, 20.8333, -62.5)
 environment = SubResource("Environment_qfgng")
 attributes = SubResource("CameraAttributesPhysical_vprtl")
-
-[node name="RayCast1" type="RayCast3D" parent="CharacterBody"]
-transform = Transform3D(0.13845, 4.24877, 7.05872, -7.99761, 0.146593, -8.40366e-09, -0.137968, -4.23396, 7.0834, 0.408195, -1.045, -0.397182)
-target_position = Vector3(0, -0.155, 0)
-collision_mask = 3
-
-[node name="RayCast2" type="RayCast3D" parent="CharacterBody"]
-transform = Transform3D(-0.172329, -5.32648, 4.59828, -7.99765, 0.145546, 1.15558e-07, -0.0892351, -2.75815, -8.88008, -0.51932, -1.05, -0.260524)
-target_position = Vector3(0, -0.155, 0)
-collision_mask = 3
-
-[node name="RayCast3" type="RayCast3D" parent="CharacterBody"]
-transform = Transform3D(0.0309132, 0.948665, -9.87414, -7.99761, 0.146593, 5.34744e-09, 0.192998, 5.92271, 1.58158, 0.0491178, -1.05, 0.533139)
-target_position = Vector3(0, -0.155, 0)
-collision_mask = 3

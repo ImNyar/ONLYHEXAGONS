@@ -23,7 +23,7 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized() * -1
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
@@ -39,10 +39,10 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _check_collision():		
-	if $RayCast1.is_colliding() or $RayCast2.is_colliding() or $RayCast3.is_colliding():
+	if $RayCast1.is_colliding() or $RayCast2.is_colliding():
 		var shape1 = $RayCast1.get_collider()
 		var shape2 = $RayCast2.get_collider()
-		var shape3 = $RayCast3.get_collider()
+		#var shape3 = $RayCast3.get_collider()
 		if shape1 != null:
 			if shape1.timer_started == false:
 				shape1.collision_timer_start()
@@ -53,11 +53,6 @@ func _check_collision():
 				shape2.collision_timer_start()
 				num += 1
 				print(num)
-		if shape3 != null:
-			if shape3.timer_started == false:
-				shape3.collision_timer_start()
-				num += 1
-				print(num)
 				
 				
 # Template code for moving camera
@@ -65,9 +60,8 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 func _unhandled_input(event):
 	if event is InputEventMouseMotion and Input.mouse_mode==Input.MOUSE_MODE_CAPTURED: #if mouse is moved, rotate
-		rotate_y(-event.relative.x * .003)
-		$camera.rotate_x(-event.relative.y * .003)
-		$camera.rotation.x = clamp($camera.rotation.x, -PI/2, PI/2)
+		rotate_y(-event.relative.x * .003) # up and down
+		$camera.rotate_x(event.relative.y * .003) # side to side
 		
 
 	
