@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7jbctmka7ojy"
-path.s3tc="res://.godot/imported/chiikawa_0.png-20c84ac52b6d3d5cbc9ad4c18c5c7479.s3tc.ctex"
+path.s3tc="res://.godot/imported/chiikawa_0.png-f68a04dbbf2d2fe657af4525f24789ae.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://chiikawa_0.png"
-dest_files=["res://.godot/imported/chiikawa_0.png-20c84ac52b6d3d5cbc9ad4c18c5c7479.s3tc.ctex"]
+source_file="res://Models/chiikawa_0.png"
+dest_files=["res://.godot/imported/chiikawa_0.png-f68a04dbbf2d2fe657af4525f24789ae.s3tc.ctex"]
 
 [params]
 

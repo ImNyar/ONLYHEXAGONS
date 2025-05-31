@@ -1,13 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://6sxlu0wxndbg"]
+[gd_scene load_steps=5 format=3 uid="uid://6sxlu0wxndbg"]
 
-[ext_resource type="Texture2D" uid="uid://d3i53h3kdihrr" path="res://Lava004_8K-PNG/Lava004_8K-PNG_Emission.png" id="1_ylrt4"]
-[ext_resource type="Script" path="res://Scripts/Killbound.gd" id="3_0lrcl"]
+[ext_resource type="Texture2D" uid="uid://dhw57b3cmx0x8" path="res://UI/VictoryOrDefeat/RedBtnPressed.png" id="1_y20o7"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y7rlv"]
-albedo_texture = ExtResource("1_ylrt4")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vxdk2"]
+albedo_texture = ExtResource("1_y20o7")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wy77r"]
-albedo_texture = ExtResource("1_ylrt4")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_mddih"]
 material = SubResource("StandardMaterial3D_wy77r")
@@ -17,9 +15,8 @@ size = Vector2(1000, 1000)
 
 [node name="Killbound" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20, 0)
-material_override = SubResource("StandardMaterial3D_y7rlv")
+material_override = SubResource("StandardMaterial3D_vxdk2")
 mesh = SubResource("PlaneMesh_mddih")
-script = ExtResource("3_0lrcl")
 
 [node name="ActualKillbound" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22, 0)
