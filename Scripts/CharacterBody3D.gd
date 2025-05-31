@@ -7,6 +7,7 @@ extends CharacterBody3D
 const SPEED = 8.0
 const JUMP_VELOCITY = 5.0
 var num = 0
+var timer_started = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -62,6 +63,14 @@ func _unhandled_input(event):
 	if event is InputEventMouseMotion and Input.mouse_mode==Input.MOUSE_MODE_CAPTURED: #if mouse is moved, rotate
 		rotate_y(-event.relative.x * .003) # up and down
 		$camera.rotate_x(event.relative.y * .003) # side to side
+		
+# Death timer
+func collision_timer_start():
+	$Timer.start()
+	timer_started = true
+
+func _on_timer_timeout():
+	$".".queue_free()
 		
 
 	

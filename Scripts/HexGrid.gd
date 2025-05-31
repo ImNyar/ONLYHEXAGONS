@@ -37,9 +37,9 @@ func _create_grid(z):
 			tile.scale = Vector3(HEXA_SCALE,2,HEXA_SCALE)
 			tile.translate(Vector3(x_cord, z*LEVEL_HEIGHT, y_cord)) # translate the tile
 			tile.translate(Vector3(cos(PI/6) / 50, 0, 0.5 / 50)) # create a gap
-			y_cord += 1 * 1.03 # this helps shift the next hexagon down
+			y_cord += 1 * 1.02 # this helps shift the next hexagon down
 			
-		x_cord += cos(PI/6) * 1.03 # this helps connect hexagons in a row
+		x_cord += cos(PI/6) * 1.02 # this helps connect hexagons in a row
 		y_cord = 0 # reset position
 			
 

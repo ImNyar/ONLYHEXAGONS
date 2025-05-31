@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dp5sx6fjvj02m"]
+[gd_scene load_steps=8 format=3 uid="uid://dp5sx6fjvj02m"]
 
 [ext_resource type="Script" path="res://Scripts/CharacterBody3D.gd" id="1_jaomw"]
 [ext_resource type="PackedScene" uid="uid://cvi5h3heb6wl" path="res://Models/chiikawa.glb" id="2_hiaos"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yiv7x"]
-radius = 0.13
-height = 0.539
+radius = 0.05
+height = 0.5
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_43uo6"]
 
@@ -17,6 +17,11 @@ glow_normalized = true
 
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_vprtl"]
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gvwr3"]
+custom_solver_bias = 0.195
+radius = 5.0
+height = 28.0
+
 [node name="Player" type="Node3D"]
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("2_hiaos")]
@@ -26,24 +31,25 @@ collision_mask = 5
 script = ExtResource("1_jaomw")
 
 [node name="Leg1" type="CollisionShape3D" parent="Sketchfab_Scene"]
-transform = Transform3D(9.76672, 0, -2.14735, 0, 10, 0, 2.14735, 0, 9.76672, -4.661, -15.5, 4.221)
+transform = Transform3D(10, 0, 0, 0, 7.9653, 6.04599, 0, -6.04599, 7.9653, -4.786, -15.5, 3.391)
+visible = false
 shape = SubResource("CapsuleShape3D_yiv7x")
 
 [node name="Leg2" type="CollisionShape3D" parent="Sketchfab_Scene"]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 3.353, -15.505, -3.762)
+transform = Transform3D(10, 0, 0, 0, 9.42641, -3.33807, 0, 3.33807, 9.42641, 3.458, -15.505, -3.437)
 shape = SubResource("CapsuleShape3D_yiv7x")
 
 [node name="RayCast1" type="RayCast3D" parent="Sketchfab_Scene"]
-transform = Transform3D(200, 0, 0, 0, 75, 0, 0, 0, 200, -4.708, -12, 4.12)
-visible = false
+transform = Transform3D(200, 0, 0, 0, 75, 0, 0, 0, 200, -4.708, -11.005, 4.12)
 target_position = Vector3(0, -0.1, 0)
 collision_mask = 3
+metadata/_edit_group_ = true
 
 [node name="RayCast2" type="RayCast3D" parent="Sketchfab_Scene"]
-transform = Transform3D(200, 0, 0, 0, 75, 0, 0, 0, 200, 3.515, -12, -3.815)
-visible = false
+transform = Transform3D(200, 0, 0, 0, 75, 0, 0, 0, 200, 3.515, -11, -3.815)
 target_position = Vector3(0, -0.1, 0)
 collision_mask = 3
+metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Sketchfab_Scene"]
 transform = Transform3D(12.5, 0, 0, 0, 12.5, 0, 0, 0, 12.5, 0, -4.16667, 0)
@@ -54,3 +60,7 @@ skeleton = NodePath("../Leg1")
 transform = Transform3D(-8.33333, 1.88556e-07, -7.03699e-07, 0, 8.04938, 2.15683, 7.28523e-07, 2.15683, -8.04938, 0, 20.8333, -62.5)
 environment = SubResource("Environment_qfgng")
 attributes = SubResource("CameraAttributesPhysical_vprtl")
+
+[node name="CollisionPolygon3D" type="CollisionShape3D" parent="Sketchfab_Scene"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.15, 0)
+shape = SubResource("CapsuleShape3D_gvwr3")

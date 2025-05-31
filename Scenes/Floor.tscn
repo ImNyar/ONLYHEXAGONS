@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://6sxlu0wxndbg"]
+
+[ext_resource type="Texture2D" uid="uid://d3i53h3kdihrr" path="res://Lava004_8K-PNG/Lava004_8K-PNG_Emission.png" id="1_ylrt4"]
+[ext_resource type="Script" path="res://Scripts/Killbound.gd" id="3_0lrcl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y7rlv"]
+albedo_texture = ExtResource("1_ylrt4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wy77r"]
+albedo_texture = ExtResource("1_ylrt4")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mddih"]
+material = SubResource("StandardMaterial3D_wy77r")
+size = Vector2(1000, 1000)
+
+[node name="Floor" type="Node3D"]
+
+[node name="Killbound" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20, 0)
+material_override = SubResource("StandardMaterial3D_y7rlv")
+mesh = SubResource("PlaneMesh_mddih")
+script = ExtResource("3_0lrcl")
+
+[node name="ActualKillbound" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22, 0)
+use_collision = true
+collision_layer = 4
+collision_mask = 4
+size = Vector3(1000, 0, 1000)

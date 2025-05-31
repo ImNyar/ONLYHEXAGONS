@@ -1,20 +1,14 @@
 [gd_scene load_steps=6 format=3 uid="uid://b116fsejid2pt"]
 
 [ext_resource type="PackedScene" uid="uid://dp5sx6fjvj02m" path="res://Scenes/Player.tscn" id="1_41vm8"]
-[ext_resource type="PackedScene" uid="uid://ci7hbyybstd0p" path="res://Scenes/UnitHex.tscn" id="2_gc08p"]
 [ext_resource type="PackedScene" uid="uid://bgrjpu5jj12iu" path="res://Scenes/HexGrid.tscn" id="3_086ju"]
+[ext_resource type="PackedScene" uid="uid://6sxlu0wxndbg" path="res://Scenes/Floor.tscn" id="4_txsyn"]
 
 [sub_resource type="Environment" id="Environment_14ig2"]
 
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_yn88e"]
 
 [node name="Game" type="Node3D"]
-
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-use_collision = true
-collision_layer = 4
-collision_mask = 4
-size = Vector3(200, 0.01, 200)
 
 [node name="Player2" parent="." instance=ExtResource("1_41vm8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.89, 82.3102, 24.4331)
@@ -23,34 +17,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.89, 82.3102, 24.4331)
 environment = SubResource("Environment_14ig2")
 camera_attributes = SubResource("CameraAttributesPhysical_yn88e")
 
-[node name="StaticHex" parent="." instance=ExtResource("2_gc08p")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0.373503, 0, -11.4562)
-
-[node name="StaticHex2" parent="." instance=ExtResource("2_gc08p")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0.373503, 1.99471, -16.5219)
-
-[node name="StaticHex3" parent="." instance=ExtResource("2_gc08p")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0.373503, 3.8533, -26.1904)
-
-[node name="StaticHex4" parent="." instance=ExtResource("2_gc08p")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 11.2465, 2.98111, -11.4562)
-
-[node name="StaticHex5" parent="." instance=ExtResource("2_gc08p")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 17.7171, 14.0556, -16.9259)
-
-[node name="StaticHex6" parent="." instance=ExtResource("2_gc08p")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 23.3055, 0, -11.5783)
-
-[node name="StaticHex7" parent="." instance=ExtResource("2_gc08p")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0.373503, 0, -11.4562)
-
-[node name="StaticHex8" parent="." instance=ExtResource("2_gc08p")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -9.10399, 5.57868, -11.4562)
-
-[node name="StaticHex9" parent="." instance=ExtResource("2_gc08p")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 5.45064, 8.17801, -2.97646)
-
 [node name="HexGrid" parent="." instance=ExtResource("3_086ju")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-4.37114e-08, 1, 0, 4.37114e-08, 1.91069e-15, 1, 1, 4.37114e-08, -4.37114e-08, 0, 10, 0)
+
+[node name="Floor" parent="." instance=ExtResource("4_txsyn")]
