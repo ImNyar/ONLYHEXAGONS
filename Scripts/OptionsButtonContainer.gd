@@ -10,7 +10,18 @@ func _ready():
 
 # Settings
 
+func _on_v_slider_value_changed(value):
+	$Volume/Bar.value = value 
 
-func _on_volume_slider_value_changed(value):
-	$TextureRect/VolumeBar.value = value
-	print($OptionsButtonContainer/TextureRect/VolumeBar)
+func _on_b_slider_value_changed(value):
+	$Brightness/Bar.value = value
+	
+func _on_c_slider_value_changed(value):
+	$Contrast/Bar.value = value
+	
+
+
+func _on_back_pressed():
+	var home = get_node(".")
+	print(home)
+

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bk2sra2inpqov"]
+[gd_scene load_steps=14 format=3 uid="uid://bk2sra2inpqov"]
 
 [ext_resource type="Texture2D" uid="uid://dl74iejxt4vcx" path="res://UI/HomeScreen/Background.png" id="1_ua7b1"]
 [ext_resource type="Script" path="res://Scripts/MenuButtonContainer.gd" id="2_15nba"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dqd33n46txxt8" path="res://UI/Settings/SettingsBackground.png" id="5_ijv1c"]
 [ext_resource type="Script" path="res://Scripts/OptionsButtonContainer.gd" id="6_llxb8"]
 [ext_resource type="Texture2D" uid="uid://dgqp16vhvk17n" path="res://UI/Settings/MasterVolumeContainer.png" id="6_xc777"]
+[ext_resource type="Texture2D" uid="uid://dysglagnj0b0f" path="res://UI/Icons/BackArrow.png" id="9_vpc5d"]
 [ext_resource type="Texture2D" uid="uid://drlm0nr6vuxf8" path="res://UI/Settings/VolumeBarEmpty.png" id="10_xrwb5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ca5bx"]
@@ -24,6 +25,11 @@ font_size = 78
 font_color = Color(1, 0.152898, 0.76849, 1)
 shadow_color = Color(0, 0.662745, 0.803922, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_665lm"]
+font_size = 23
+font_color = Color(1, 0.152898, 0.76849, 1)
+shadow_color = Color(0, 0.662745, 0.803922, 1)
+
 [node name="Start" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -37,7 +43,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="MainMenu" type="TextureRect" parent="."]
-visible = false
 show_behind_parent = true
 light_mask = 65
 layout_mode = 0
@@ -181,6 +186,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="OptionsMenu" type="TextureRect" parent="."]
+visible = false
 show_behind_parent = true
 light_mask = 65
 layout_mode = 0
@@ -241,29 +247,128 @@ theme_override_constants/separation = 20
 alignment = 1
 script = ExtResource("6_llxb8")
 
-[node name="TextureRect" type="TextureRect" parent="OptionsMenu/MenuButtons/OptionsButtonContainer"]
+[node name="Volume" type="TextureRect" parent="OptionsMenu/MenuButtons/OptionsButtonContainer"]
 layout_mode = 2
 texture = ExtResource("6_xc777")
 
-[node name="VolumeSlider" type="HSlider" parent="OptionsMenu/MenuButtons/OptionsButtonContainer/TextureRect"]
+[node name="VSlider" type="HSlider" parent="OptionsMenu/MenuButtons/OptionsButtonContainer/Volume"]
 layout_mode = 0
 offset_left = 34.0
 offset_top = 55.0
 offset_right = 585.0
 offset_bottom = 71.0
 
-[node name="VolumeBar" type="TextureProgressBar" parent="OptionsMenu/MenuButtons/OptionsButtonContainer/TextureRect"]
+[node name="Bar" type="TextureProgressBar" parent="OptionsMenu/MenuButtons/OptionsButtonContainer/Volume"]
 layout_mode = 0
 offset_left = 35.0
 offset_top = 32.0
 offset_right = 587.0
 offset_bottom = 62.0
 scale = Vector2(1, 0.87)
-value = 4.0
 texture_under = ExtResource("10_xrwb5")
 texture_progress = ExtResource("10_xrwb5")
 tint_under = Color(0.980737, 0.857796, 0.943532, 1)
 tint_progress = Color(0.254902, 1, 1, 1)
 
+[node name="Label" type="Label" parent="OptionsMenu/MenuButtons/OptionsButtonContainer/Volume"]
+layout_mode = 2
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 692.0
+offset_bottom = 34.0
+text = "VOLUME"
+label_settings = SubResource("LabelSettings_665lm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Brightness" type="TextureRect" parent="OptionsMenu/MenuButtons/OptionsButtonContainer"]
+layout_mode = 2
+texture = ExtResource("6_xc777")
+
+[node name="BSlider" type="HSlider" parent="OptionsMenu/MenuButtons/OptionsButtonContainer/Brightness"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 55.0
+offset_right = 585.0
+offset_bottom = 71.0
+
+[node name="Bar" type="TextureProgressBar" parent="OptionsMenu/MenuButtons/OptionsButtonContainer/Brightness"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 32.0
+offset_right = 587.0
+offset_bottom = 62.0
+scale = Vector2(1, 0.87)
+texture_under = ExtResource("10_xrwb5")
+texture_progress = ExtResource("10_xrwb5")
+tint_under = Color(0.980737, 0.857796, 0.943532, 1)
+tint_progress = Color(0.254902, 1, 1, 1)
+
+[node name="Label" type="Label" parent="OptionsMenu/MenuButtons/OptionsButtonContainer/Brightness"]
+layout_mode = 2
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 692.0
+offset_bottom = 34.0
+text = "BRIGHTNESS"
+label_settings = SubResource("LabelSettings_665lm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Contrast" type="TextureRect" parent="OptionsMenu/MenuButtons/OptionsButtonContainer"]
+layout_mode = 2
+texture = ExtResource("6_xc777")
+
+[node name="CSlider" type="HSlider" parent="OptionsMenu/MenuButtons/OptionsButtonContainer/Contrast"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 55.0
+offset_right = 585.0
+offset_bottom = 71.0
+
+[node name="Bar" type="TextureProgressBar" parent="OptionsMenu/MenuButtons/OptionsButtonContainer/Contrast"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 32.0
+offset_right = 587.0
+offset_bottom = 62.0
+scale = Vector2(1, 0.87)
+texture_under = ExtResource("10_xrwb5")
+texture_progress = ExtResource("10_xrwb5")
+tint_under = Color(0.980737, 0.857796, 0.943532, 1)
+tint_progress = Color(0.254902, 1, 1, 1)
+
+[node name="Label" type="Label" parent="OptionsMenu/MenuButtons/OptionsButtonContainer/Contrast"]
+layout_mode = 2
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 692.0
+offset_bottom = 34.0
+text = "BRIGHTNESS"
+label_settings = SubResource("LabelSettings_665lm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="MarginContainer" parent="OptionsMenu"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -97.0
+offset_right = 133.0
+grow_vertical = 0
+
+[node name="Back" type="TextureButton" parent="OptionsMenu/Back"]
+modulate = Color(1, 0.152941, 0.768627, 1)
+self_modulate = Color(0.899725, 0.235656, 0.96718, 1)
+layout_mode = 2
+texture_normal = ExtResource("9_vpc5d")
+texture_pressed = ExtResource("9_vpc5d")
+stretch_mode = 3
+
 [connection signal="pressed" from="MainMenu/MenuButtons/MenuButtonContainer/Play" to="MainMenu/MenuButtons/MenuButtonContainer" method="_on_play_pressed"]
-[connection signal="value_changed" from="OptionsMenu/MenuButtons/OptionsButtonContainer/TextureRect/VolumeSlider" to="OptionsMenu/MenuButtons/OptionsButtonContainer" method="_on_volume_slider_value_changed"]
+[connection signal="pressed" from="MainMenu/MenuButtons/MenuButtonContainer/Exit" to="MainMenu/MenuButtons/MenuButtonContainer" method="_on_exit_pressed"]
+[connection signal="value_changed" from="OptionsMenu/MenuButtons/OptionsButtonContainer/Volume/VSlider" to="OptionsMenu/MenuButtons/OptionsButtonContainer" method="_on_v_slider_value_changed"]
+[connection signal="value_changed" from="OptionsMenu/MenuButtons/OptionsButtonContainer/Brightness/BSlider" to="OptionsMenu/MenuButtons/OptionsButtonContainer" method="_on_b_slider_value_changed"]
+[connection signal="value_changed" from="OptionsMenu/MenuButtons/OptionsButtonContainer/Contrast/CSlider" to="OptionsMenu/MenuButtons/OptionsButtonContainer" method="_on_c_slider_value_changed"]
+[connection signal="pressed" from="OptionsMenu/Back/Back" to="OptionsMenu/MenuButtons/OptionsButtonContainer" method="_on_back_pressed"]
