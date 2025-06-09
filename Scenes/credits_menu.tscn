@@ -1,0 +1,98 @@
+[gd_scene load_steps=6 format=3 uid="uid://xbbxdwlke86m"]
+
+[ext_resource type="Texture2D" uid="uid://dqd33n46txxt8" path="res://UI/Settings/SettingsBackground.png" id="1_t0usb"]
+[ext_resource type="Script" path="res://Scripts/OptionsButtonContainer.gd" id="2_mbnd3"]
+[ext_resource type="Texture2D" uid="uid://dysglagnj0b0f" path="res://UI/Icons/BackArrow.png" id="5_1vlep"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ca5bx"]
+font_size = 111
+font_color = Color(1, 0.152898, 0.76849, 1)
+shadow_color = Color(0, 0.662745, 0.803922, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3v5f8"]
+font_size = 11
+font_color = Color(1, 0.152898, 0.76849, 1)
+shadow_color = Color(0, 0.662745, 0.803922, 1)
+
+[node name="OptionsMenu" type="TextureRect"]
+show_behind_parent = true
+light_mask = 65
+offset_left = -1.0
+offset_top = -5.0
+offset_right = 1148.0
+offset_bottom = 646.0
+texture = ExtResource("1_t0usb")
+
+[node name="Title" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 152.0
+
+[node name="Label" type="Label" parent="Title"]
+layout_mode = 2
+text = "Credits"
+label_settings = SubResource("LabelSettings_ca5bx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Copyright" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -348.5
+offset_top = -15.0
+offset_right = 349.5
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Copyright label" type="Label" parent="Copyright"]
+layout_mode = 2
+text = "© 2025 Hexanut Limited Onlygon Corporation and all related characters and elements are under the copyright protection of not me"
+label_settings = SubResource("LabelSettings_3v5f8")
+horizontal_alignment = 3
+vertical_alignment = 1
+
+[node name="MenuButtons" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 119.0
+offset_right = 999.0
+offset_bottom = 638.0
+
+[node name="OptionsButtonContainer" type="VBoxContainer" parent="MenuButtons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+alignment = 1
+script = ExtResource("2_mbnd3")
+
+[node name="TextEdit" type="TextEdit" parent="MenuButtons/OptionsButtonContainer"]
+layout_mode = 2
+text = "as"
+placeholder_text = "as"
+
+[node name="Back" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -97.0
+offset_right = 133.0
+grow_vertical = 0
+
+[node name="Back" type="TextureButton" parent="Back"]
+modulate = Color(1, 0.152941, 0.768627, 1)
+self_modulate = Color(0.899725, 0.235656, 0.96718, 1)
+layout_mode = 2
+texture_normal = ExtResource("5_1vlep")
+texture_pressed = ExtResource("5_1vlep")
+stretch_mode = 3
+
+[connection signal="pressed" from="Back/Back" to="MenuButtons/OptionsButtonContainer" method="_on_back_pressed"]

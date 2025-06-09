@@ -13,3 +13,15 @@ func _on_play_pressed():
 
 func _on_exit_pressed():
 	get_tree().quit()
+
+
+func _on_options_pressed():
+	get_tree().change_scene_to_file("res://Scenes/options_menu.tscn")
+
+
+func _on_credits_pressed():
+	get_tree().change_scene_to_file("res://Scenes/credits_menu.tscn")
+
+
+func _on_tutorial_pressed():
+	get_tree().change_scene_to_file("res://Scenes/tutorial_menu.tscn")
