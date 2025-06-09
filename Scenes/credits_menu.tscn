@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://xbbxdwlke86m"]
+[gd_scene load_steps=8 format=3 uid="uid://xbbxdwlke86m"]
 
 [ext_resource type="Texture2D" uid="uid://dqd33n46txxt8" path="res://UI/Settings/SettingsBackground.png" id="1_t0usb"]
-[ext_resource type="Script" path="res://Scripts/OptionsButtonContainer.gd" id="2_mbnd3"]
+[ext_resource type="Script" path="res://Scripts/MenusNavigation.gd" id="2_mbnd3"]
+[ext_resource type="Texture2D" uid="uid://bpwpcii4gfq5f" path="res://UI/Icons/PinkHeart.png" id="4_db6xm"]
 [ext_resource type="Texture2D" uid="uid://dysglagnj0b0f" path="res://UI/Icons/BackArrow.png" id="5_1vlep"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ca5bx"]
@@ -14,7 +15,12 @@ font_size = 11
 font_color = Color(1, 0.152898, 0.76849, 1)
 shadow_color = Color(0, 0.662745, 0.803922, 1)
 
-[node name="OptionsMenu" type="TextureRect"]
+[sub_resource type="LabelSettings" id="LabelSettings_1428g"]
+font_size = 18
+font_color = Color(1, 0.152898, 0.76849, 1)
+shadow_color = Color(0, 0.662745, 0.803922, 1)
+
+[node name="CreditsMenu" type="TextureRect"]
 show_behind_parent = true
 light_mask = 65
 offset_left = -1.0
@@ -65,7 +71,7 @@ offset_top = 119.0
 offset_right = 999.0
 offset_bottom = 638.0
 
-[node name="OptionsButtonContainer" type="VBoxContainer" parent="MenuButtons"]
+[node name="CreditsButtonContainer" type="VBoxContainer" parent="MenuButtons"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -73,10 +79,29 @@ theme_override_constants/separation = 20
 alignment = 1
 script = ExtResource("2_mbnd3")
 
-[node name="TextEdit" type="TextEdit" parent="MenuButtons/OptionsButtonContainer"]
+[node name="Credits" type="Label" parent="MenuButtons/CreditsButtonContainer"]
 layout_mode = 2
-text = "as"
-placeholder_text = "as"
+text = "Funding: Ryan (Matchaz0)
+Producer: Ryan (Matchaz0)
+Director: Ryan (Matchaz0)
+Creative Director: Ryan (Matchaz0)
+Lead Developer: Ryan (Matchaz0)
+Game Developers: Ryan (Matchaz0)
+Game design: Ryan (Matchaz0)
+Lead Artist: Ryan (Matchaz0)
+Technical Artist: Ryan (Matchaz0)
+Animator: Ryan (Matchaz0)
+Environment artist: Ryan (Matchaz0)
+Writer: Ryan (Matchaz0)
+Audio engineer: Ryan (Matchaz0)
+UI designer: LoudEyes (loudeyes.itch.io)
+MakingItPossible: Das (Das)
+Game Tester: Kevin (SkyZ)
+Emotional Support: Kevin (SkyZ)
+"
+label_settings = SubResource("LabelSettings_1428g")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Back" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -95,4 +120,22 @@ texture_normal = ExtResource("5_1vlep")
 texture_pressed = ExtResource("5_1vlep")
 stretch_mode = 3
 
-[connection signal="pressed" from="Back/Back" to="MenuButtons/OptionsButtonContainer" method="_on_back_pressed"]
+[node name="Icon" type="TextureRect" parent="."]
+modulate = Color(1, 0.658616, 0.668082, 1)
+offset_left = 219.0
+offset_top = 59.0
+offset_right = 347.0
+offset_bottom = 187.0
+rotation = -0.191986
+texture = ExtResource("4_db6xm")
+
+[node name="Icon2" type="TextureRect" parent="."]
+modulate = Color(1, 0.658616, 0.668082, 1)
+offset_left = 854.0
+offset_top = 5.99999
+offset_right = 982.0
+offset_bottom = 134.0
+rotation = 0.483456
+texture = ExtResource("4_db6xm")
+
+[connection signal="pressed" from="Back/Back" to="MenuButtons/CreditsButtonContainer" method="_on_back_pressed"]

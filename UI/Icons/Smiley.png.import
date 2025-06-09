@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://71h60mpmhhw4"
-path="res://.godot/imported/BlueHeart.png-b533fff894b13de2c56e405cb4569d0a.ctex"
+uid="uid://ds6fog6r2gkab"
+path="res://.godot/imported/Smiley.png-05efbd72552a5f37b1978201e67cc737.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Icons/BlueHeart.png"
-dest_files=["res://.godot/imported/BlueHeart.png-b533fff894b13de2c56e405cb4569d0a.ctex"]
+source_file="res://UI/Icons/Smiley.png"
+dest_files=["res://.godot/imported/Smiley.png-05efbd72552a5f37b1978201e67cc737.ctex"]
 
 [params]
 

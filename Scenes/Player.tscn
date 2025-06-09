@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dp5sx6fjvj02m"]
+[gd_scene load_steps=10 format=3 uid="uid://dp5sx6fjvj02m"]
 
 [ext_resource type="Script" path="res://Scripts/CharacterBody3D.gd" id="1_jaomw"]
 [ext_resource type="PackedScene" uid="uid://cvi5h3heb6wl" path="res://Models/chiikawa.glb" id="2_hiaos"]
+[ext_resource type="Script" path="res://Scenes/SpeedRunTimer.gd" id="3_d5nh0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yiv7x"]
 radius = 0.05
@@ -21,6 +22,10 @@ glow_normalized = true
 custom_solver_bias = 0.195
 radius = 5.0
 height = 28.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ydvck"]
+font_size = 50
+font_color = Color(0.0156863, 0.588235, 0.486275, 1)
 
 [node name="Player" type="Node3D"]
 
@@ -64,3 +69,10 @@ attributes = SubResource("CameraAttributesPhysical_vprtl")
 [node name="CollisionPolygon3D" type="CollisionShape3D" parent="Sketchfab_Scene"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.15, 0)
 shape = SubResource("CapsuleShape3D_gvwr3")
+
+[node name="TimeLabel" type="Label" parent="Sketchfab_Scene"]
+offset_right = 219.0
+offset_bottom = 69.0
+text = "AAAA"
+label_settings = SubResource("LabelSettings_ydvck")
+script = ExtResource("3_d5nh0")

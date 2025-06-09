@@ -8,6 +8,7 @@ const SPEED = 8.0
 const JUMP_VELOCITY = 5.0
 var num = 0
 var timer_started = false
+var time_elasped := 0.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -59,6 +60,7 @@ func _check_collision():
 # Template code for moving camera
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
 func _unhandled_input(event):
 	if event is InputEventMouseMotion and Input.mouse_mode==Input.MOUSE_MODE_CAPTURED: #if mouse is moved, rotate
 		rotate_y(-event.relative.x * .003) # up and down
@@ -71,7 +73,8 @@ func collision_timer_start():
 
 func _on_timer_timeout():
 	$".".queue_free()
-		
+	
+
 
 	
 
