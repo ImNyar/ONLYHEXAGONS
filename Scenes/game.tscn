@@ -1,26 +1,76 @@
-[gd_scene load_steps=6 format=3 uid="uid://b116fsejid2pt"]
+[gd_scene load_steps=11 format=3 uid="uid://b116fsejid2pt"]
 
-[ext_resource type="PackedScene" uid="uid://dp5sx6fjvj02m" path="res://Scenes/Player.tscn" id="1_41vm8"]
-[ext_resource type="PackedScene" uid="uid://bgrjpu5jj12iu" path="res://Scenes/HexGrid.tscn" id="3_086ju"]
-[ext_resource type="PackedScene" uid="uid://6sxlu0wxndbg" path="res://Scenes/Floor.tscn" id="4_txsyn"]
+[ext_resource type="PackedScene" uid="uid://dp5sx6fjvj02m" path="res://Scenes/player.tscn" id="1_41vm8"]
+[ext_resource type="Script" path="res://Scripts/game_mechanics.gd" id="1_t5r7t"]
+[ext_resource type="PackedScene" uid="uid://bgrjpu5jj12iu" path="res://Scenes/hex_grid.tscn" id="3_086ju"]
+[ext_resource type="PackedScene" uid="uid://6sxlu0wxndbg" path="res://Scenes/floor.tscn" id="4_txsyn"]
+[ext_resource type="Script" path="res://Scripts/menus_navigation.gd" id="5_vv15w"]
+[ext_resource type="Texture2D" uid="uid://cocotak75qxvy" path="res://UI/HomeScreen/Button.png" id="6_54222"]
+[ext_resource type="Texture2D" uid="uid://cvyf1bh6tet83" path="res://UI/HomeScreen/ButtonPressed.png" id="7_si70q"]
 
 [sub_resource type="Environment" id="Environment_14ig2"]
 
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_yn88e"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_xm11a"]
+font_size = 78
+font_color = Color(1, 0.152898, 0.76849, 1)
+shadow_color = Color(0, 0.662745, 0.803922, 1)
+
 [node name="Game" type="Node3D"]
+script = ExtResource("1_t5r7t")
 
-[node name="Player2" parent="." instance=ExtResource("1_41vm8")]
+[node name="Player" parent="." instance=ExtResource("1_41vm8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.89, 82.3102, 24.4331)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_14ig2")
-camera_attributes = SubResource("CameraAttributesPhysical_yn88e")
 
 [node name="HexGrid" parent="." instance=ExtResource("3_086ju")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-4.37114e-08, 1, 0, 4.37114e-08, 1.91069e-15, 1, 1, 4.37114e-08, -4.37114e-08, 0, 10, 0)
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="DirectionalLight3D"]
+environment = SubResource("Environment_14ig2")
+camera_attributes = SubResource("CameraAttributesPhysical_yn88e")
+
 [node name="Floor" parent="." instance=ExtResource("4_txsyn")]
 top_level = true
+
+[node name="HomeButtons" type="MarginContainer" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.265
+offset_left = -545.0
+offset_right = -305.28
+offset_bottom = 80.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(545, 0)
+
+[node name="HomeButtonContainer" type="VBoxContainer" parent="HomeButtons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+alignment = 1
+script = ExtResource("5_vv15w")
+
+[node name="ReturnHome" type="TextureButton" parent="HomeButtons/HomeButtonContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_54222")
+texture_pressed = ExtResource("7_si70q")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="HomeButtons/HomeButtonContainer/ReturnHome"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -13.0
+offset_right = 543.0
+offset_bottom = 94.0
+text = "Home
+"
+label_settings = SubResource("LabelSettings_xm11a")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="HomeButtons/HomeButtonContainer/ReturnHome" to="HomeButtons/HomeButtonContainer" method="_on_return_home_pressed"]

@@ -1,0 +1,86 @@
+[gd_scene load_steps=8 format=3 uid="uid://c277ffcm4mn2f"]
+
+[ext_resource type="Texture2D" uid="uid://dqd33n46txxt8" path="res://UI/Settings/SettingsBackground.png" id="1_ak2ah"]
+[ext_resource type="Script" path="res://Scripts/menus_navigation.gd" id="2_nd6rb"]
+[ext_resource type="Texture2D" uid="uid://cocotak75qxvy" path="res://UI/HomeScreen/Button.png" id="3_vix8x"]
+[ext_resource type="Texture2D" uid="uid://cvyf1bh6tet83" path="res://UI/HomeScreen/ButtonPressed.png" id="4_fxpin"]
+
+[sub_resource type="GDScript" id="GDScript_k051s"]
+script/source = "extends TextureRect
+
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	if Input.is_action_just_pressed(\"ui_cancel\"): # just pressed makes only one press possible, without it, it will flicker
+		$\".\".visible = false
+		
+	
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_ca5bx"]
+font_size = 111
+font_color = Color(1, 0.152898, 0.76849, 1)
+shadow_color = Color(0, 0.662745, 0.803922, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_covoj"]
+font_size = 78
+font_color = Color(1, 0.152898, 0.76849, 1)
+shadow_color = Color(0, 0.662745, 0.803922, 1)
+
+[node name="PauseMenu" type="TextureRect"]
+show_behind_parent = true
+light_mask = 65
+offset_left = -1.0
+offset_top = -5.0
+offset_right = 1148.0
+offset_bottom = 646.0
+texture = ExtResource("1_ak2ah")
+script = SubResource("GDScript_k051s")
+
+[node name="Title" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 152.0
+
+[node name="Label" type="Label" parent="Title"]
+layout_mode = 2
+text = "Pause"
+label_settings = SubResource("LabelSettings_ca5bx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PauseButtons" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 119.0
+offset_right = 999.0
+offset_bottom = 638.0
+
+[node name="PauseButtonContainer" type="VBoxContainer" parent="PauseButtons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+alignment = 1
+script = ExtResource("2_nd6rb")
+
+[node name="ReturnHome" type="TextureButton" parent="PauseButtons/PauseButtonContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_vix8x")
+texture_pressed = ExtResource("4_fxpin")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="PauseButtons/PauseButtonContainer/ReturnHome"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -13.0
+offset_right = 543.0
+offset_bottom = 94.0
+text = "Home
+"
+label_settings = SubResource("LabelSettings_covoj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="PauseButtons/PauseButtonContainer/ReturnHome" to="PauseButtons/PauseButtonContainer" method="_on_return_home_pressed"]

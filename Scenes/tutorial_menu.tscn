@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://b5b3hh8sx1efv"]
 
 [ext_resource type="Texture2D" uid="uid://dqd33n46txxt8" path="res://UI/Settings/SettingsBackground.png" id="1_lh73y"]
-[ext_resource type="Script" path="res://Scripts/MenusNavigation.gd" id="2_eyqpm"]
+[ext_resource type="Script" path="res://Scripts/menus_navigation.gd" id="2_eyqpm"]
 [ext_resource type="Texture2D" uid="uid://cdxn73s8lojo2" path="res://UI/Icons/Checkmark.png" id="4_nuv88"]
 [ext_resource type="Texture2D" uid="uid://ds6fog6r2gkab" path="res://UI/Icons/Smiley.png" id="5_ncu60"]
 [ext_resource type="Texture2D" uid="uid://dysglagnj0b0f" path="res://UI/Icons/BackArrow.png" id="5_xwfsf"]
@@ -17,7 +17,7 @@ font_color = Color(1, 0.152898, 0.76849, 1)
 shadow_color = Color(0, 0.662745, 0.803922, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_5i5ge"]
-font_size = 47
+font_size = 44
 font_color = Color(1, 0.152898, 0.76849, 1)
 shadow_color = Color(0, 0.662745, 0.803922, 1)
 
@@ -88,7 +88,8 @@ To move right: Press D or RIGHT
 To move back: Press S or DOWN
 To Jump: Jump!
 To win: Try not to die!
-To die: Jump off!"
+To die: Jump off!
+To return home: Esc"
 label_settings = SubResource("LabelSettings_5i5ge")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -112,6 +113,7 @@ stretch_mode = 3
 
 [node name="Icon" type="TextureRect" parent="."]
 modulate = Color(1, 0.658616, 0.668082, 1)
+layout_mode = 0
 offset_left = 810.0
 offset_top = 28.0
 offset_right = 938.0
@@ -121,6 +123,7 @@ texture = ExtResource("4_nuv88")
 
 [node name="Icon2" type="TextureRect" parent="."]
 modulate = Color(1, 0.658616, 0.668082, 1)
+layout_mode = 0
 offset_left = 191.0
 offset_top = 32.0
 offset_right = 319.0

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bgrjpu5jj12iu"]
 
-[ext_resource type="Script" path="res://Scripts/HexGrid.gd" id="1_x8k3w"]
-[ext_resource type="PackedScene" uid="uid://ci7hbyybstd0p" path="res://Scenes/UnitHex.tscn" id="2_l83jm"]
+[ext_resource type="Script" path="res://Scripts/hex_grid.gd" id="1_x8k3w"]
+[ext_resource type="PackedScene" uid="uid://ci7hbyybstd0p" path="res://Scenes/unit_hex.tscn" id="2_l83jm"]
 
 [node name="HexGrid" type="Node3D"]
 

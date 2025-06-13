@@ -1,6 +1,6 @@
 extends Node3D
 
-const HEXA_UNIT := preload("res://Scenes/UnitHex.tscn")
+const HEXA_UNIT := preload("res://Scenes/unit_hex.tscn")
 const HEXA_SCALE : = 5
 const GRID_SIZE := 13
 const NUM_LEVELS := 8
@@ -12,20 +12,6 @@ func _ready():
 		_create_grid(z)
 
 func _create_grid(z):
-	#var tile = HEXA_UNIT.instantiate()
-	#add_child(tile)
-	#tile.scale = Vector3(1,1,1)
-	#
-	#tile = HEXA_UNIT.instantiate()
-	#add_child(tile)
-	#tile.scale = Vector3(1,1,1)
-	#tile.translate(Vector3(0, 0, 1))
-	#
-	#tile = HEXA_UNIT.instantiate()
-	#add_child(tile)
-	#tile.scale = Vector3(1,1,1)
-	#tile.translate(Vector3(cos(PI/6), 0, 0.5))
-	
 	var x_cord := 0.0
 	var y_cord := 0.0
 	for x in range(GRID_SIZE): # column

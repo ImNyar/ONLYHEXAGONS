@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cttg2m1tcpb6u"]
 
 [ext_resource type="Texture2D" uid="uid://dl74iejxt4vcx" path="res://UI/HomeScreen/Background.png" id="1_3welw"]
-[ext_resource type="Script" path="res://Scripts/MenuButtonContainer.gd" id="2_cdpg0"]
+[ext_resource type="Script" path="res://Scripts/menu_button_container.gd" id="2_cdpg0"]
 [ext_resource type="Texture2D" uid="uid://cocotak75qxvy" path="res://UI/HomeScreen/Button.png" id="3_ekma6"]
 [ext_resource type="Texture2D" uid="uid://cvyf1bh6tet83" path="res://UI/HomeScreen/ButtonPressed.png" id="4_w8tny"]
 

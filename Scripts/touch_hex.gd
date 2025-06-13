@@ -20,10 +20,4 @@ func collision_timer_start():
 	
 func _on_timer_timeout():
 	$".".queue_free()
-#func _player_entered():
-	#queue_free()
-#
-#
-#func _on_mouse_entered():
-	#_player_entered()
 

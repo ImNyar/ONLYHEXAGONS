@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ci7hbyybstd0p"]
 
 [ext_resource type="PackedScene" uid="uid://dpr78s3u81ah" path="res://Models/unit_hex.glb" id="1_2ud3w"]
-[ext_resource type="Script" path="res://Scripts/TouchHex.gd" id="1_y24l8"]
+[ext_resource type="Script" path="res://Scripts/touch_hex.gd" id="1_y24l8"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qvwdd"]
 points = PackedVector3Array(0.577, 0, 0, 0.577, 0.25, 0, -0.577, 0, 0, -0.577, 0.25, 0, 0.289, 0, 0.5, 0.289, 0.25, 0.5, -0.289, 0, 0.5, -0.289, 0.25, 0.5, -0.289, 0, -0.5, -0.289, 0.25, -0.5, 0.289, 0, -0.5, 0.289, 0.25, -0.5)
