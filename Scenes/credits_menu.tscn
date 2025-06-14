@@ -16,7 +16,7 @@ font_color = Color(1, 0.152898, 0.76849, 1)
 shadow_color = Color(0, 0.662745, 0.803922, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_1428g"]
-font_size = 18
+font_size = 17
 font_color = Color(1, 0.152898, 0.76849, 1)
 shadow_color = Color(0, 0.662745, 0.803922, 1)
 
@@ -97,6 +97,8 @@ Audio engineer: Ryan (ImNyar)
 UI designer: LoudEyes (loudeyes.itch.io)
 MakingItPossible: Das (Das)
 Game Tester: Kevin (SkyZ)
+Game Tester: Sameer (Potato man)
+Game testers: Hleb, Raging_Diarehea, Tree, Leon, Olaf
 Emotional Support: Kevin (SkyZ)
 "
 label_settings = SubResource("LabelSettings_1428g")
