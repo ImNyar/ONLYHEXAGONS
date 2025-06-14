@@ -73,4 +73,5 @@ label_settings = SubResource("LabelSettings_xm11a")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="tree_entered" from="Floor" to="." method="_on_floor_tree_entered"]
 [connection signal="pressed" from="HomeButtons/HomeButtonContainer/ReturnHome" to="HomeButtons/HomeButtonContainer" method="_on_return_home_pressed"]
