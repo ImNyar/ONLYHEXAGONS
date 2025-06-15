@@ -81,19 +81,19 @@ script = ExtResource("2_mbnd3")
 
 [node name="Credits" type="Label" parent="MenuButtons/CreditsButtonContainer"]
 layout_mode = 2
-text = "Funding: Ryan (ImNyar)
-Producer: Ryan (ImNyar)
-Director: Ryan (ImNyar)
+text = "Funding: Ryan 
+Producer: Ryan 
+Director: Ryan 
 Creative Director: Ryan (ImNyar)
-Lead Developer: Ryan (ImNyar)
-Game Developers: Ryan (ImNyar)
-Game design: Ryan (ImNyar)
-Lead Artist: Ryan (ImNyar)
-Technical Artist: Ryan (ImNyar)
-Animator: Ryan (ImNyar)
-Environment artist: Ryan (ImNyar)
-Writer: Ryan (ImNyar)
-Audio engineer: Ryan (ImNyar)
+Lead Developer: Ryan
+Game Developers: Ryan 
+Game design: Ryan 
+Lead Artist: Ryan
+Technical Artist: Ryan
+Animator: Ryan
+Environment artist: Ryan 
+Writer: Ryan
+Audio engineer: Ryan 
 UI designer: LoudEyes (loudeyes.itch.io)
 MakingItPossible: Das (Das)
 Game Tester: Kevin (SkyZ)
